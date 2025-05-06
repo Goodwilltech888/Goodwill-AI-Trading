@@ -1,0 +1,15 @@
+ai-trading-bots/
+│
+├── bitget_trader/
+│   ├── app.py               # Streamlit UI
+│   ├── requirements.txt     # Python dependencies
+│   └── secrets.toml         # API credentials (in .gitignore)
+│
+├── forex_trader/
+│   ├── app.py               # Streamlit UI
+│   ├── requirements.txt     # Python dependencies
+│   └── mt4_scripts/         # MT4 expert advisors
+│       └── python_bridge.mq4
+│
+├── .gitignore
+└── README.md

@@ -1,0 +1,7 @@
+// MT4 Expert Advisor to expose data to Python
+#property copyright "Python Bridge"
+#property version   "1.00"
+
+void OnTick() {
+    // Data will be accessed via COM interface
+}
