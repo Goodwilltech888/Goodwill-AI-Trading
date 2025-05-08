@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  bitget_trader:
+    build: ./bitget_trader
+    ports:
+      - "8501:8501"
+    env_file:
+      - bitget_trader/secrets.toml
+    restart: unless-stopped
+
+  forex_trader:
+    build: ./forex_trader
+    platform: windows/amd64
+    restart: on-failure

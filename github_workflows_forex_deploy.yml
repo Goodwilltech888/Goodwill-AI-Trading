@@ -1,0 +1,16 @@
+name: Deploy Forex Trader
+
+on:
+  workflow_dispatch:  # Manual trigger for Windows-only
+  schedule:
+    - cron: '0 18 * * 1-5'  # 6PM UTC on weekdays
+
+jobs:
+  deploy:
+    runs-on: windows-latest  # MT4 requires Windows
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install MT4
+        run: |
+          choco install metatrader4 --yes
+          cp forex_trader/mt4_scripts/*.mq4 "$MT4_PATH/MQL4/Experts/"

@@ -1,0 +1,24 @@
+module "bitget_trader" {
+  source  = "terraform-aws-modules/ecs/aws"
+  version = "~> 4.0"
+
+  cluster_name = "ai-trading-bitget"
+  fargate_capacity_providers = ["FARGATE"]
+
+  services = {
+    trader = {
+      cpu    = 1024
+      memory = 4096
+      container_definitions = {
+        "bitget-trader" = {
+          image = "${aws_ecr_repository.bitget.repository_url}:latest"
+          port_mappings = [{ containerPort = 8501 }]
+          secrets = [
+            { name = "BITGET_API_KEY", valueFrom = "/aws/secrets/bitget-key" },
+            { name = "TELEGRAM_TOKEN", valueFrom = "/aws/secrets/telegram-token" }
+          ]
+        }
+      }
+    }
+  }
+}

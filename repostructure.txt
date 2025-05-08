@@ -1,0 +1,26 @@
+ai-trading-bots/
+│
+├── .github/
+│   └── workflows/
+│       ├── bitget_deploy.yml
+│       └── forex_deploy.yml
+│
+├── bitget_trader/
+│   ├── Dockerfile
+│   ├── app.py
+│   ├── bot/
+│   │   ├── trading_engine.py
+│   │   └── alert_manager.py
+│   ├── requirements.txt
+│   └── secrets.toml.sample
+│
+├── forex_trader/
+│   ├── Dockerfile
+│   ├── app.py
+│   ├── mt4_scripts/
+│   │   └── python_bridge.mq4
+│   └── requirements.txt
+│
+├── docker-compose.yml
+├── .gitignore
+└── README.md
