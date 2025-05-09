@@ -1,0 +1,4 @@
+api_key: "your_api_key_here"
+secret: "your_secret_here"
+passphrase: "your_passphrase"  # Set during API creation
+sandbox: false  # Set to true for testing
